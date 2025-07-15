@@ -159,7 +159,7 @@ The project is organized into public and private folders, following a structure 
 - **`js/scripts.js` (or `app.js`)**: This is where the core client-side logic resides. It handles:
   - Task creation, display, updates, and deletion.
   - Event handling for user interactions (e.g., button clicks, form submissions).
-  - Interaction with browser storage (e.g., `localStorage` or `IndexedDB`) to persist tasks.
+  - Interaction with browser storage (`localStorage`) to persist tasks.
   - Registration of the service worker.
 - **`manifest.json`**: The PWA manifest file. It provides metadata about the application, such as its name, icons, start URL, and display mode. This allows users to "install" the app to their home screen.
 - **`service-worker.js`**: This script runs in the background and enables offline functionality. It:
