@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright © 2025 github.com/dtiberio
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open("v1").then((cache) => {

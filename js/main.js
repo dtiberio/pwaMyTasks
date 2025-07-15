@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: MIT
+// Copyright © 2025 github.com/dtiberio
+
 // filepath: public_html/tasks-v1/js/main.js
 document.addEventListener("DOMContentLoaded", () => {
   const taskForm = document.getElementById("task-form");
