@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About the Task Manager PWA">
+  <title>About Task Manager PWA</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    #readme-content {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      padding: 1rem;
+      white-space: pre-wrap;
+      /* Ensures pre-formatted text wraps and respects newlines */
+      max-height: 500px;
+      /* Limit height and make scrollable */
+      overflow-y: auto;
+      font-family: var(--bs-font-monospace);
+      /* Use Bootstrap's monospace font */
+    }
+
+    .img-fluid {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-primary text-white text-center p-3">
+    <nav class="navbar navbar-dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1"><i class="bi bi-info-circle-fill"></i> About Task Manager</span>
+        <a href="index.html" class="btn btn-light btn-sm"><i class="bi bi-house-door-fill"></i> Home</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="app-description" class="container mb-5">
+    <h2>Application Overview</h2>
+    <p>tasks-v1 is designed as a lightweight, offline-first task management application. It utilizes modern web
+      technologies
+      like HTML5, CSS3, JavaScript (ES6+), and Bootstrap 5 to provide a seamless user experience. All data is stored
+      locally in your browser, ensuring privacy and accessibility even without an internet connection, thanks to its
+      Progressive Web App (PWA) features including a Service Worker and a Web App Manifest.</p>
+    <p>This project serves as a demonstration of PWA capabilities, focusing on client-side operations, local storage,
+      and a
+      responsive user interface built with Bootstrap components.</p>
+  </section>
+
+  <section id="learn-more" class="container mb-5">
+    <h2 class="pb-2 border-bottom">To Learn More</h2>
+    <p>Explore the inner workings of the application through the following resources:</p>
+
+    <article class="mb-4 card shadow-sm">
+      <div class="card-header">
+        <h3 class="my-0 fw-normal">Application Workflow Diagram</h3>
+      </div>
+      <div class="card-body">
+        <p>The following diagram illustrates the interaction between different components of the tasks-v1 PWA:</p>
+        <div class="text-center p-3">
+          <img src="images/workflow-diagram.svg" alt="Workflow Diagram for tasks-v1"
+            class="img-fluid border rounded shadow-sm" style="max-height: 400px;">
+        </div>
+      </div>
+    </article>
+
+    <article class="card shadow-sm">
+      <div class="card-header">
+        <h3 class="my-0 fw-normal">Project README</h3>
+      </div>
+      <div class="card-body">
+        <p>For a detailed explanation of the project structure, setup, and features, please refer to the README
+          content
+          below:</p>
+        <pre id="readme-content" class="rounded">Loading README.md...</pre>
+      </div>
+    </article>
+  </section>
+  </main>
+
+  <footer class="text-center p-3 mt-5 bg-light">
+    <p>&copy; 2025 Task Manager PWA</p>
+  </footer>
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Fetch and display README.md
+      fetch('./README.md') // Assumes README.md is in the same public directory (public_html/tasks-v1/README.md)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.statusText);
+          }
+          return response.text();
+        })
+        .then(text => {
+          document.getElementById('readme-content').textContent = text;
+        })
+        .catch(error => {
+          console.error('Error fetching README.md:', error);
+          document.getElementById('readme-content').textContent = 'Failed to load README.md. Please ensure the file exists in the root of the public project folder (e.g., public_html/tasks-v1/README.md).';
+        });
+
+      // Optional: Service worker registration, if about.html can be an entry point or needs to be cached.
+      // This is typically handled in a global script.js linked in all HTML files.
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', () => {
+      //     navigator.serviceWorker.register('/service-worker.js', { scope: '/' }) // Adjust scope if needed
+      //       .then(registration => {
+      //         console.log('ServiceWorker registration successful for about.html with scope: ', registration.scope);
+      //       })
+      //       .catch(error => {
+      //         console.log('ServiceWorker registration failed for about.html: ', error);
+      //       });
+      //   });
+      // }
+    });
+  </script>
+</body>
+
+</html>
