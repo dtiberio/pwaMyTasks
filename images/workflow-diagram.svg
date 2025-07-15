@@ -32,7 +32,7 @@ Copyright © 2025 github.com/dtiberio
 
     <!-- Storage level -->
     <rect x="310" y="420" width="180" height="60" rx="5" fill="#ffc107" stroke="#cc9a06"/>
-    <text x="400" y="455" text-anchor="middle" fill="white" font-family="Arial">localStorage/IndexedDB</text>
+    <text x="400" y="455" text-anchor="middle" fill="white" font-family="Arial">localStorage</text>
 
     <!-- Connection arrows -->
     <!-- index.html to ServiceWorker -->
