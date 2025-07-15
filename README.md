@@ -178,7 +178,7 @@ The project is organized into public and private folders, following a structure 
 6.  **Task Management**:
     - Users interact with the HTML interface (`index.html`) to add, view, edit, or delete tasks.
     - JavaScript in `scripts.js` handles these interactions, updating the UI dynamically.
-    - Tasks are typically stored in the browser's `localStorage` or `IndexedDB` to persist them across sessions.
+    - Tasks are stored in the browser's `localStorage` to persist them across sessions.
 7.  **Styling and Responsiveness**: Bootstrap 5 classes are used throughout `index.html` for layout, components (buttons, forms, lists), and responsive design. Custom styles in `css/styles.css` can override or extend Bootstrap's styling.
 
 This combination of client-side technologies enables `tasks-v1` to function as a reliable, installable, and offline-capable task management application directly within the user's web browser.
